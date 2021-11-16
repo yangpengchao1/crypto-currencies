@@ -97,18 +97,18 @@ export default function CurrencyTable() {
             title: 'Exchange id',
             dataIndex: 'exchange_id',
             key: 'exchange_id',
-            render: (text: string) => <a>{text}</a>,
         },
         {
             title: 'Symbol',
             dataIndex: 'symbol',
             key: 'symbol',
-            render: (text: string) => <a>{text}</a>,
+            sorter: (a:Currency, b:Currency) => a.symbol.localeCompare(b.symbol),
         },
         {
             title: 'Base Asset',
             dataIndex: 'base_asset',
             key: 'base_asset',
+            sorter: (a:Currency, b:Currency) => a.base_asset.localeCompare(b.base_asset),
         },
         {
             title: 'Quote Asset',
@@ -119,21 +119,25 @@ export default function CurrencyTable() {
             title: 'Price Unconverted',
             dataIndex: 'price_unconverted',
             key: 'price_unconverted',
+            sorter: (a:Currency, b:Currency) => parseFloat(a.price_unconverted) - parseFloat(b.price_unconverted)
         },
         {
             title: 'Price',
             dataIndex: 'price',
             key: 'price',
+            sorter: (a:Currency, b:Currency) => parseFloat(a.price) - parseFloat(b.price),
         },
         {
             title: 'Change 24h',
             dataIndex: 'change_24h',
             key: 'change_24h',
+            sorter: (a:Currency, b:Currency) => parseFloat(a.change_24h) - parseFloat(b.change_24h)
         },
         {
             title: 'Volume 24h',
             dataIndex: 'volume_24h',
             key: 'volume_24h',
+            sorter: (a:Currency, b:Currency) => parseFloat(a.volume_24h) - parseFloat(b.volume_24h)
         },
         {
             title: 'Favorite',
