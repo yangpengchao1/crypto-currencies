@@ -1,0 +1,20 @@
+.div-frame{
+    margin: 20px;
+    position: relative;
+}
+.set-div{
+    position:absolute;
+    right:0;
+    top:20;
+    z-index:2
+}
+
+.set-title{
+    float:left;
+    margin-right:10px;
+    margin-top:5px
+}
+
+.set-search-bar{
+    width:200px
+}
